@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "used to collect feedback from users",
   "main": "index.js",
+  "engines":{
+    "node":"8.6.0",
+    "npm":"5.4.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start":"node index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/AmanDhembla/feedback_collection/issues"
   },
-  "homepage": "https://github.com/AmanDhembla/feedback_collection#readme"
+  "homepage": "https://github.com/AmanDhembla/feedback_collection#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
