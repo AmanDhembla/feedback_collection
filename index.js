@@ -5,4 +5,5 @@ app.get("/",function(req,res){
   res.send({"yo":"how are you"});
 });
 
-app.listen(5000);
+PORT=process.env.PORT || 5000;
+app.listen(PORT);
