@@ -1,0 +1,19 @@
+{
+  "name": "feedback_collection",
+  "version": "1.0.0",
+  "description": "used to collect feedback from users",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmanDhembla/feedback_collection.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmanDhembla/feedback_collection/issues"
+  },
+  "homepage": "https://github.com/AmanDhembla/feedback_collection#readme"
+}
