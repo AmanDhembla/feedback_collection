@@ -3,12 +3,13 @@
   "version": "1.0.0",
   "description": "used to collect feedback from users",
   "main": "index.js",
-  "engines":{
-    "node":"8.6.0",
-    "npm":"5.4.2"
+  "engines": {
+    "node": "8.6.0",
+    "npm": "5.4.2"
   },
   "scripts": {
-    "start":"node index.js"
+    "start": "node index.js",
+    "dev":"nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,9 @@
   },
   "homepage": "https://github.com/AmanDhembla/feedback_collection#readme",
   "dependencies": {
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "nodemon": "^1.12.1",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^1.0.0"
   }
 }
