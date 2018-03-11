@@ -1,8 +1,8 @@
-var passport=require("passport");
-var GoogleStrategy=require("passport-google-oauth20").Strategy;
-var keys=require("../config/keys");
-var mongoose=require("mongoose");
-var User=mongoose.model("users");
+const passport=require("passport");
+const GoogleStrategy=require("passport-google-oauth20").Strategy;
+const keys=require("../config/keys");
+const mongoose=require("mongoose");
+const User=mongoose.model("users");
 
 passport.serializeUser((user,done)=>{
   done(null,user.id);
@@ -19,14 +19,14 @@ passport.use(new GoogleStrategy({
   clientSecret:keys.googleSecretKey,
   callbackURL:"/auth/google/callback",
   proxy: true
-},function(accessToken,refreshToken,profile,done){
-  User.findOne({googleId:profile.id}).then(function(existingUser){
+},(accessToken,refreshToken,profile,done)=>{
+  User.findOne({googleId:profile.id}).then((existingUser)=>{
     if(existingUser){
       done(null,existingUser);
     }else{
       new User({googleId:profile.id})
       .save()
-      .then(function(user){
+      .then((user)=>{
         done(null,user);
       });
     }

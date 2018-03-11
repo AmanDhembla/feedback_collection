@@ -1,19 +1,23 @@
-var express= require("express");
-var mongoose=require("mongoose");
-var keys=require("./config/keys");
-var passport=require("passport");
-var cookieSession=require("cookie-session");
+const express= require("express");
+const mongoose=require("mongoose");
+const keys=require("./config/keys");
+const passport=require("passport");
+const cookieSession=require("cookie-session");
 
-var app=express();
+const app=express();
 
 mongoose.connect(keys.mongoURI);
 
+
+//to execute or load the userSchema
 require("./models/user");
+
+// we are not getting anything from the file we just want the code in that file to be executed
 require("./services/passport");
 
 //routers
-var authRouter=require("./routes/authRouter");
-var userRouter=require("./routes/user");
+const authRouter=require("./routes/authRouter");
+const userRouter=require("./routes/user"); 
 
 app.use(
   cookieSession({
@@ -25,7 +29,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-app.get("/",function(req,res){
+app.get("/",(req,res)=>{
   res.send({"yo":"how are you"});
 });
 
@@ -33,5 +37,5 @@ app.get("/",function(req,res){
 app.use("/auth/google",authRouter);
 app.use("/api/user",userRouter);
 
-PORT=process.env.PORT || 5000;
+const PORT=process.env.PORT || 5000;
 app.listen(PORT);
