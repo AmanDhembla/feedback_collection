@@ -2,11 +2,13 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import {BrowserRouter,Route} from 'react-router-dom';
 import Header from './Header';
+import Landing from './Landing';
 import {fetchUser} from "../actions/index";
-const Landing=()=>{
+
+const Dashboard=()=>{
     return (
         <div>
-            Landing Page
+            Dashboard Page
         </div>
     )
 }
@@ -22,6 +24,7 @@ class App extends Component{
                     <div>
                         <Header />
                         <Route path="/" component={Landing} exact={true} />
+                        <Route path="/surveys" component={Dashboard} exact={true} />
                     </div>           
                 </BrowserRouter>
             </div>
