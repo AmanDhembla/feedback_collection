@@ -3,12 +3,13 @@ const mongoose=require("mongoose");
 const keys=require("./config/keys");
 const passport=require("passport");
 const cookieSession=require("cookie-session");
-
+const bodyParser = require('body-parser');
 const app=express();
 
 mongoose.connect(keys.mongoURI);
 
 
+app.use(bodyParser.json());
 //to execute or load the userSchema
 require("./models/user");
 

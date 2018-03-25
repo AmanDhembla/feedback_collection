@@ -9,3 +9,13 @@ export const fetchUser = () =>{
         });
     }  
 }
+
+export const handleToken =(token)=>{ 
+    return async (dispatch)=>{      
+        const res=await axios.post('/api/user/stripe',token);
+        dispatch({
+            type: 'FETCH_USER',
+            payload: res.data
+        });
+    }
+}
