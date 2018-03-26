@@ -29,11 +29,6 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 
-
-app.get("/",(req,res)=>{
-  res.send({"yo":"how are you"});
-});
-
 //routes
 app.use("/auth/google",authRouter);
 app.use("/api/user",userRouter);
