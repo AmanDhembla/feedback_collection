@@ -20,6 +20,7 @@ require("./services/passport");
 //routers
 const authRouter=require("./routes/authRouter");
 const userRouter=require("./routes/user"); 
+const surveyRouter=require("./routes/surveyRouter");
 
 app.use(
   cookieSession({
@@ -33,6 +34,7 @@ app.use(passport.session());
 //routes
 app.use("/auth/google",authRouter);
 app.use("/api/user",userRouter);
+app.use('/api/surveys',surveyRouter);
 
 if(process.env.NODE_ENV==='production'){
   //express will serve up production assets
