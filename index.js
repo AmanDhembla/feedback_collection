@@ -12,6 +12,7 @@ mongoose.connect(keys.mongoURI);
 app.use(bodyParser.json());
 //to execute or load the userSchema
 require("./models/user");
+require("./models/survey");
 
 // we are not getting anything from the file we just want the code in that file to be executed
 require("./services/passport");
