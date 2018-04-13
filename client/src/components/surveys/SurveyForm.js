@@ -10,15 +10,15 @@ export const FIELDS =[
         label: "Survey Title"
     },
     {
-        name:"Subject",
+        name:"subject",
         label:"Subject line"
     },
     {
-        name: "Body", 
+        name: "body", 
         label:"Email Body"
     },
     {
-        name:"emails", 
+        name:"recipients", 
         label:"Recipient List"
     }
 ];
@@ -47,18 +47,18 @@ class SurveyForm extends Component{
 
 const validate=(values)=>{
     const errors={};
-    errors.emails=validEmails(values.emails|| '');
+    errors.recipients=validEmails(values.recipients|| '');
     if(!values.title){
         errors.title="you must provide a title";
     }
-    if(!values.Subject){
-        errors.Subject="you must provide a subject line ";
+    if(!values.subject){
+        errors.subject="you must provide a subject line ";
     }
-    if(!values.Body){
-        errors.Body="you must provide a body";
+    if(!values.body){
+        errors.body="you must provide a body";
     }
-    if(!values.emails){
-        errors.emails="you must provide the emails";
+    if(!values.recipients){
+        errors.recipients="you must provide the emails";
     }
     
     return errors;

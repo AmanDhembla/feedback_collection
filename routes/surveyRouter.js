@@ -24,11 +24,12 @@ router.post("/", requireLogin, hasEnoughCredits,async (req,res)=>{
     });
 
     const mailer=new Mailer(survey,surveytemplate(survey));
+    let user;
     try{
     const response= await mailer.send();
     await survey.save();
     req.user.credits -=1;
-    const user=await req.user.save();
+    user=await req.user.save();
     }catch(err){
         res.status(422).send(err);
     }
