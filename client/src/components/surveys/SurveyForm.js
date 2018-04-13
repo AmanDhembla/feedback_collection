@@ -4,7 +4,7 @@ import SurveyField from './SurveyField';
 import {Link} from 'react-router-dom';
 import validEmails from "../../utils/validateEmail";
 
-const FIELDS =[
+export const FIELDS =[
     {
         name: "title",
         label: "Survey Title"
@@ -35,7 +35,7 @@ class SurveyForm extends Component{
     render(){
         return (
             <div>
-                <form onSubmit={this.props.handleSubmit(values=>console.log(values))}>
+                <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
                     {this.renderFields()}
                     <Link className="red btn-flat left white-text" to="/surveys">Cancel</Link>
                     <button className="teal btn-flat right white-text" type="submit">NEXT<i className="material-icons right">done</i></button>
@@ -66,5 +66,6 @@ const validate=(values)=>{
 
 export default reduxForm({
     validate: validate,
-    form: 'SurveyForm'
+    form: 'SurveyForm',
+    destroyOnUnmount: false
 })(SurveyForm);
