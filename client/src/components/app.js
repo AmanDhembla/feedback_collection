@@ -3,16 +3,10 @@ import {connect} from 'react-redux';
 import {BrowserRouter,Route} from 'react-router-dom';
 import Header from './Header';
 import Dashboard from './Dashboard';
+import SurveyNew from './surveys/SuveryNew';
 import Landing from './Landing';
 import {fetchUser} from "../actions/index";
 
-const SurveyNew = ()=>{
-    return (
-        <div>
-            New Survey
-        </div>
-    )
-}
 
 class App extends Component{
     componentDidMount(){
